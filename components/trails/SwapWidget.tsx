@@ -13,7 +13,7 @@ export default function SwapWidget() {
       <CardHeader>
         <CardTitle>
           <a
-            href="https://docs.trails.build/examples/swap"
+            href="https://docs.trails.build/use-cases/swap"
             target="_blank"
             rel="noreferrer"
             className="inline-flex items-center gap-1 underline underline-offset-2 text-primary"
