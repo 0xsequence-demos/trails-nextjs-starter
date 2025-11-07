@@ -7,13 +7,15 @@ import {
   CardFooter,
 } from "../ui/card";
 
+const apiKey = process.env.NEXT_PUBLIC_TRAILS_API_KEY!;
+
 export default function EarnWidget() {
   return (
     <Card className="h-full">
       <CardHeader>
         <CardTitle>
           <a
-            href="https://docs.trails.build/examples/earn"
+            href="https://docs.trails.build/use-cases/earn"
             target="_blank"
             rel="noreferrer"
             className="inline-flex items-center gap-1 underline underline-offset-2 text-primary"
@@ -28,6 +30,7 @@ export default function EarnWidget() {
       </CardHeader>
       <CardFooter className="mt-auto justify-center w-full">
         <TrailsWidget
+          apiKey={apiKey}
           mode="earn"
           theme="auto"
           buttonText="Start Earning"

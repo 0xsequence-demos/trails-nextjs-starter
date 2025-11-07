@@ -7,13 +7,15 @@ import {
   CardFooter,
 } from "../ui/card";
 
+const apiKey = process.env.NEXT_PUBLIC_TRAILS_API_KEY!;
+
 export default function PayWidget() {
   return (
     <Card className="h-full">
       <CardHeader>
         <CardTitle>
           <a
-            href="https://docs.trails.build/examples/pay"
+            href="https://docs.trails.build/use-cases/pay"
             target="_blank"
             rel="noreferrer"
             className="inline-flex items-center gap-1 underline underline-offset-2 text-primary"
@@ -28,6 +30,7 @@ export default function PayWidget() {
       </CardHeader>
       <CardFooter className="mt-auto justify-center w-full">
         <TrailsWidget
+          apiKey={apiKey}
           mode="pay"
           theme="auto"
           toAddress="0xF69F076c7225651b30d17B1a9C454319A4CfE77c"
