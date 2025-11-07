@@ -28,6 +28,8 @@ pnpm i
 Copy the `.env.example` to `.env` file in the project root:
 
 ```env
+# Request an access key at https://t.me/build_with_trails
+NEXT_PUBLIC_TRAILS_API_KEY="ADD_API_KEY_HERE"
 # Optional walletconnect ID if you'd like walletconnect support, retrieved from https://cloud.walletconnect.com/.
 NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID=
 ```
