@@ -7,7 +7,6 @@ import { injectedWallet } from '@rainbow-me/rainbowkit/wallets';
 // import { walletConnectWallet, rainbowWallet } from '@rainbow-me/rainbowkit/wallets';
 import { mainnet, polygon, optimism, arbitrum, base, soneium } from "wagmi/chains";
 import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
-import { SequenceHooksProvider } from "@0xsequence/hooks";
 
 const config = getDefaultConfig({
   appName: "Trails Starter",
@@ -35,17 +34,7 @@ export function Providers({ children }: { children: React.ReactNode }) {
   return (
     <WagmiProvider config={config}>
       <QueryClientProvider client={queryClient}>
-        <SequenceHooksProvider
-          config={{
-            projectAccessKey: process.env.NEXT_PUBLIC_SEQUENCE_PROJECT_ACCESS_KEY ?? "",
-            env: {
-              apiUrl: process.env.NEXT_PUBLIC_SEQUENCE_API_URL,
-              indexerGatewayUrl: process.env.NEXT_PUBLIC_SEQUENCE_INDEXER_URL,
-            },
-          }}
-        >
           <RainbowKitProvider>{children}</RainbowKitProvider>
-        </SequenceHooksProvider>
       </QueryClientProvider>
     </WagmiProvider>
   );

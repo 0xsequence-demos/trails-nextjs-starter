@@ -7,6 +7,8 @@ import {
   CardFooter,
 } from "../ui/card";
 
+const apiKey = process.env.NEXT_PUBLIC_TRAILS_API_KEY!;
+
 export default function EarnWidget() {
   return (
     <Card className="h-full">
@@ -28,6 +30,7 @@ export default function EarnWidget() {
       </CardHeader>
       <CardFooter className="mt-auto justify-center w-full">
         <TrailsWidget
+          apiKey={apiKey}
           mode="earn"
           theme="auto"
           buttonText="Start Earning"
