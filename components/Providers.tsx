@@ -2,11 +2,19 @@
 
 import { getDefaultConfig, RainbowKitProvider } from "@rainbow-me/rainbowkit";
 import { WagmiProvider } from "wagmi";
-import { injectedWallet } from '@rainbow-me/rainbowkit/wallets';
+import { injectedWallet } from "@rainbow-me/rainbowkit/wallets";
 // Optional wallets (uncomment to enable)
 // import { walletConnectWallet, rainbowWallet } from '@rainbow-me/rainbowkit/wallets';
-import { mainnet, polygon, optimism, arbitrum, base, soneium } from "wagmi/chains";
+import {
+  mainnet,
+  polygon,
+  optimism,
+  arbitrum,
+  base,
+  soneium,
+} from "wagmi/chains";
 import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
+import { TrailsProvider } from "0xtrails/widget";
 
 const config = getDefaultConfig({
   appName: "Trails Starter",
@@ -34,7 +42,17 @@ export function Providers({ children }: { children: React.ReactNode }) {
   return (
     <WagmiProvider config={config}>
       <QueryClientProvider client={queryClient}>
+        <TrailsProvider // only needed if using Trails React Hooks
+          config={{
+            trailsApiKey: process.env.NEXT_PUBLIC_TRAILS_API_KEY ?? "",
+            // Optional: Custom API endpoints
+            // trailsApiUrl: "...",
+            // sequenceIndexerUrl: "...",
+            // sequenceNodeGatewayUrl: "..."
+          }}
+        >
           <RainbowKitProvider>{children}</RainbowKitProvider>
+        </TrailsProvider>
       </QueryClientProvider>
     </WagmiProvider>
   );
