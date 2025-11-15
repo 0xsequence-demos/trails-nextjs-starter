@@ -6,7 +6,6 @@ import {
   CardDescription,
   CardFooter,
 } from "../ui/card";
-import { Button } from "../ui/button";
 
 const apiKey = process.env.NEXT_PUBLIC_TRAILS_API_KEY!;
 
@@ -25,17 +24,19 @@ export default function FundWidget() {
           </a>
         </CardTitle>
         <CardDescription>
-          Deposit into a chain, app, or protocol, in this case USDC on Base. Users choose how much
-          to send from any token with a variable amount. Fiat on-ramping also supported from exchanges.
+          Deposit into a chain, app, or protocol, in this case USDC on Base.
+          Users choose how much to send from any token with a variable amount.
+          Fiat on-ramping also supported from exchanges.
         </CardDescription>
       </CardHeader>
       <CardFooter className="mt-auto justify-center w-full">
         <TrailsWidget
           apiKey={apiKey}
           mode="fund"
-          toChainId={5031} // Base
+          toChainId={8543} // Base
           toToken="0x28bec7e30e6faee657a03e19bf1128aad7632a00"
           theme="auto"
+          buttonText="Fund with Trails"
           customCss={`
             --trails-border-radius-button: 9999px;
             --trails-primary: #F59E0B; /* amber-500 */
@@ -43,17 +44,8 @@ export default function FundWidget() {
             --trails-text-inverse: #1F2937; /* slate-800 for better contrast on amber */
             --trails-focus-ring: rgba(245,158,11,.35);
           `}
-        >
-          <Button
-            type="button"
-            className="h-10 w-full rounded-full p-0 font-semibold bg-blue-500 text-white hover:bg-blue-600"
-          >
-            Fund Account
-          </Button>
-        </TrailsWidget>
+        />
       </CardFooter>
     </Card>
   );
 }
-
-

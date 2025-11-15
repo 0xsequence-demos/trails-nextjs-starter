@@ -9,7 +9,7 @@
     "lint": "eslint"
   },
   "dependencies": {
-    "0xtrails": "^0.4.1",
+    "0xtrails": "^0.6.1",
     "@0xsequence/hooks": "^5.3.27",
     "@eslint/eslintrc": "^3.3.1",
     "@eslint/js": "^9.38.0",
