@@ -35,7 +35,7 @@ export default function FundWidget() {
           mode="fund"
           toChainId={8543} // Base
           toToken="0x28bec7e30e6faee657a03e19bf1128aad7632a00"
-          theme="auto"
+          theme="light"
           buttonText="Fund with Trails"
           customCss={`
             --trails-border-radius-button: 9999px;

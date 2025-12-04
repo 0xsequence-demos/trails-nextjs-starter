@@ -32,7 +32,7 @@ export default function PayWidget() {
         <TrailsWidget
           apiKey={apiKey}
           mode="pay"
-          theme="auto"
+          theme="light"
           toAddress="0xF69F076c7225651b30d17B1a9C454319A4CfE77c"
           toAmount="0.1"
           toChainId={42161}
